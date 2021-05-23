@@ -27,7 +27,7 @@ val javadocJar by tasks.registering(Jar::class) {
 
 kotlin {
     android{
-        publishLibraryVariants("release")
+        publishLibraryVariants("release", "debug")
     }
     iosX64("ios") {
         binaries {
@@ -53,6 +53,14 @@ android {
         minSdkVersion(24)
         targetSdkVersion(29)
     }
+    buildTypes {
+        getByName("release") {
+            isMinifyEnabled = false
+        }
+        val staging by creating{
+            matchingFallbacks = listOf("debug")
+        }
+    }
 }
 
 afterEvaluate {
@@ -74,7 +82,7 @@ afterEvaluate {
 
             pom{
                 name.set("Lumberjack")
-                description.set("Tweedle is an Android library built around the Twitter v2 API built fully in Kotlin using Kotlin Coroutines")
+                description.set("Logging library for Kotlin Multiplatform Mobile applications")
                 url.set("https://github.com/tyczj/Lumberjack")
                 licenses {
                     license {
