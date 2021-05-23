@@ -51,8 +51,8 @@ Now when you call `Lumberjack.log` your custom logger will get called along with
 **Android**
 
 ```
-releaseImplementation 'io.github.tyczj.lumberjack:Lumberjack-android:0.3.2@aar'
-debugImplementation 'io.github.tyczj.lumberjack:Lumberjack-android-debug:0.3.2@aar'
+releaseImplementation 'io.github.tyczj.lumberjack:Lumberjack-android:1.0.0@aar'
+debugImplementation 'io.github.tyczj.lumberjack:Lumberjack-android-debug:1.0.0@aar'
 ```
 
 **iOS**
